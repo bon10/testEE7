@@ -28,7 +28,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.26</version>
     </dependency>
-            
+
    </dependencies>
    <build>
      <finalName>testEE7</finalName>
@@ -47,6 +47,20 @@
           <version>2.3</version>
           <configuration>
             <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.wildfly.plugins</groupId>
+          <artifactId>wildfly-maven-plugin</artifactId>
+          <version>1.0.1.Final</version>
+          <configuration>
+            <jboss-home>${wildfly.home}</jboss-home>
+            <modules-path>${wildfly.home}/modules</modules-path>
+            <jvm-args>-ea -Xms64m -Xmx512m -XX:MaxPermSize=256m
+                      -Djava.net.preferIPv4Stack=true
+                      -Djboss.server.base.dir=${wildfly.home}/standalone
+                      -Djboss.socket.binding.port-offset=${wildfly.port.offset}</jvm-args>
+            <port>${wildfly.port.mgmt}</port>
           </configuration>
         </plugin>
      </plugins>
