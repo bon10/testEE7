@@ -18,4 +18,7 @@ NetBeansやコンソールは分かりません。
 #注意事項
 Eclipseで手動デプロイではなく、プロジェクトを「サーバで実行」とした場合、  
 JAX-RSが上手く動きません。(URLが404 Not Foundになる)  
-なので、手動で色々やるのが面倒な方はNet Beans + GlassFish 4 の環境が無難です。
+WildFly 8.1.0 Finalの場合は下記設定でなんとかなりました。
+http://www.nailedtothex.org/articles/wildfly/jvmparams/
+
+Net Beans + GlassFish 4 の環境とかIntelliJ使うほうがいいかも。
